@@ -1,0 +1,148 @@
+$grey-color: #758091;
+$primary-white: #ffffff;
+$dark-color: #000;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+ul,
+div,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.comments-container {
+  position: relative;
+  max-width: 1440px;
+  max-height: 1201.5px;
+
+  margin: 0 auto;
+  background: $primary-white;
+  text-align: center;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 501px;
+    height: 501px;
+    left: -122px;
+    top: -60px;
+    border-radius: 50%;
+    background: linear-gradient(
+      145.44deg,
+      #e8edf0 10.54%,
+      rgba(232, 237, 240, 0) 85.04%
+    );
+  }
+
+  &__title {
+    width: 408px;
+    height: 54px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 54px;
+    color: $grey-color;
+    margin: 100px auto;
+  }
+
+  &__cards {
+    display: grid;
+
+    max-width: 1140px;
+    min-height: 670px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+  }
+
+  &__card {
+    border: 1px solid #e9ecf2;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 3.84083px 20.1644px rgba(157, 175, 181, 0.25));
+    border-radius: 15.3633px;
+    text-align: left;
+    margin: 20px 10px;
+  }
+
+  &__text {
+    margin: 20px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+    color: $dark-color;
+    text-align: left;
+  }
+
+  &__client-name {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13.5px;
+    margin: 20px 20px 0;
+  }
+  &__job {
+    margin: 0;
+    font-family: Poppins;
+    margin-left: 20px;
+
+    font-size: 14px;
+  }
+  &__stars {
+    margin: 5px 20px 20px;
+  }
+  //================mimi-phpoto
+
+  &__miniinfo-wrapper {
+    display: flex;
+  }
+
+  &__miniinfo-wrapper &__stars {
+    margin-bottom: 0;
+  }
+
+  &__minifoto {
+    margin: 20px 0 0 20px;
+  }
+
+  //----wide-card
+  .wide-card {
+    display: flex;
+
+    .raul {
+      max-height: 255px;
+      min-width: 50%;
+      display: flex;
+
+      img {
+        border-radius: 15.3633px;
+        align-self: center;
+      }
+    }
+  }
+}
