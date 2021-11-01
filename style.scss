@@ -1,7 +1,8 @@
+@import "mixins/mixin_formedia.scss";
 $grey-color: #758091;
 $primary-white: #ffffff;
 $dark-color: #000;
-
+$mainc: "comments-container";
 *,
 *::before,
 *::after {
@@ -11,7 +12,9 @@ $dark-color: #000;
 
 ul,
 div,
-body {
+body,
+li,
+img {
   padding: 0;
   margin: 0;
 }
@@ -33,10 +36,28 @@ select {
   font: inherit;
 }
 
-.comments-container {
+.wrapper {
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.#{$mainc} > button {
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: double 4px #67c5ff;
+  border-radius: 3px;
+  transition: 0.4s;
+}
+
+.#{$mainc} > button:hover {
+  background: $grey-color;
+}
+
+.#{$mainc} {
   position: relative;
   max-width: 1440px;
-  max-height: 1201.5px;
+  min-height: 700px;
 
   margin: 0 auto;
   background: $primary-white;
@@ -57,17 +78,26 @@ select {
     );
   }
 
+  %fontm {
+    font-style: normal;
+    font-weight: bold;
+  }
   &__title {
+    @extend %fontm;
     width: 408px;
     height: 54px;
-
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 600;
     font-size: 36px;
     line-height: 54px;
     color: $grey-color;
     margin: 100px auto;
+    @include media-small {
+      font-size: 22px;
+      margin: 100px auto;
+    }
+    @include media-xs {
+      font-size: 16px;
+      width: fit-content;
+    }
   }
 
   &__cards {
@@ -77,7 +107,16 @@ select {
     min-height: 670px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 25% 50% 25%;
+    grid-template-columns: 1fr 2fr 1fr;
+    @include media-small {
+      grid-template-columns: 1fr;
+    }
+    @include media-xs {
+      grid-template-columns: 1fr;
+    }
+    @include media-medium {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   &__card {
@@ -100,21 +139,21 @@ select {
   }
 
   &__client-name {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
+    @extend %fontm;
     font-size: 13.5px;
     margin: 20px 20px 0;
   }
   &__job {
     margin: 0;
-    font-family: Poppins;
     margin-left: 20px;
 
     font-size: 14px;
   }
   &__stars {
     margin: 5px 20px 20px;
+  }
+  &__column {
+    margin-bottom: 0;
   }
   //================mimi-phpoto
 
@@ -133,11 +172,20 @@ select {
   //----wide-card
   .wide-card {
     display: flex;
-
+    @include media-medium {
+      display: block;
+      padding: 20px 0 0;
+    }
+    @include media-xs {
+      display: block;
+    }
     .raul {
       max-height: 255px;
       min-width: 50%;
       display: flex;
+      @include media-medium {
+        padding: 0px 20px;
+      }
 
       img {
         border-radius: 15.3633px;
@@ -145,4 +193,18 @@ select {
       }
     }
   }
+}
+
+.notvisible {
+  display: none;
+}
+
+#adress-p {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  background-color: $primary-white;
+  padding: 10px;
+  margin: 40px 0 0;
 }

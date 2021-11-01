@@ -2,13 +2,15 @@
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: Poppins;
 }
 
 ul,
 div,
-body {
+body,
+li,
+img {
   padding: 0;
   margin: 0;
 }
@@ -30,10 +32,29 @@ select {
   font: inherit;
 }
 
+.wrapper {
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.comments-container > button {
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: double 4px #67c5ff;
+  border-radius: 3px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.comments-container > button:hover {
+  background: #758091;
+}
+
 .comments-container {
   position: relative;
   max-width: 1440px;
-  max-height: 1201.5px;
+  min-height: 700px;
   margin: 0 auto;
   background: #ffffff;
   text-align: center;
@@ -48,19 +69,42 @@ select {
   left: -122px;
   top: -60px;
   border-radius: 50%;
-  background: linear-gradient(145.44deg, #e8edf0 10.54%, rgba(232, 237, 240, 0) 85.04%);
+  background: linear-gradient(
+    145.44deg,
+    #e8edf0 10.54%,
+    rgba(232, 237, 240, 0) 85.04%
+  );
+}
+
+.comments-container .comments-container__title,
+.comments-container .comments-container__client-name {
+  font-style: normal;
+  font-weight: bold;
 }
 
 .comments-container__title {
   width: 408px;
   height: 54px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
   font-size: 36px;
   line-height: 54px;
   color: #758091;
   margin: 100px auto;
+}
+
+@media (max-width: 600px) and (min-width: 481px) {
+  .comments-container__title {
+    font-size: 22px;
+    margin: 100px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .comments-container__title {
+    font-size: 16px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
 }
 
 .comments-container__cards {
@@ -70,16 +114,39 @@ select {
   min-height: 670px;
   margin: 0 auto;
   display: grid;
-  -ms-grid-columns: 25% 50% 25%;
-      grid-template-columns: 25% 50% 25%;
+  -ms-grid-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+@media (max-width: 600px) and (min-width: 481px) {
+  .comments-container__cards {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .comments-container__cards {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 599px) {
+  .comments-container__cards {
+    -ms-grid-columns: (1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .comments-container__card {
   border: 1px solid #e9ecf2;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-filter: drop-shadow(0px 3.84083px 20.1644px rgba(157, 175, 181, 0.25));
-          filter: drop-shadow(0px 3.84083px 20.1644px rgba(157, 175, 181, 0.25));
+  box-sizing: border-box;
+  -webkit-filter: drop-shadow(
+    0px 3.84083px 20.1644px rgba(157, 175, 181, 0.25)
+  );
+  filter: drop-shadow(0px 3.84083px 20.1644px rgba(157, 175, 181, 0.25));
   border-radius: 15.3633px;
   text-align: left;
   margin: 20px 10px;
@@ -96,22 +163,22 @@ select {
 }
 
 .comments-container__client-name {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: bold;
   font-size: 13.5px;
   margin: 20px 20px 0;
 }
 
 .comments-container__job {
   margin: 0;
-  font-family: Poppins;
   margin-left: 20px;
   font-size: 14px;
 }
 
 .comments-container__stars {
   margin: 5px 20px 20px;
+}
+
+.comments-container__column {
+  margin-bottom: 0;
 }
 
 .comments-container__miniinfo-wrapper {
@@ -134,6 +201,19 @@ select {
   display: flex;
 }
 
+@media (max-width: 768px) and (min-width: 599px) {
+  .comments-container .wide-card {
+    display: block;
+    padding: 20px 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .comments-container .wide-card {
+    display: block;
+  }
+}
+
 .comments-container .wide-card .raul {
   max-height: 255px;
   min-width: 50%;
@@ -142,10 +222,30 @@ select {
   display: flex;
 }
 
+@media (max-width: 768px) and (min-width: 599px) {
+  .comments-container .wide-card .raul {
+    padding: 0px 20px;
+  }
+}
+
 .comments-container .wide-card .raul img {
   border-radius: 15.3633px;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+.notvisible {
+  display: none;
+}
+
+#adress-p {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  background-color: #ffffff;
+  padding: 10px;
+  margin: 40px 0 0;
 }
 /*# sourceMappingURL=style.css.map */
