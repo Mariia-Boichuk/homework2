@@ -2,7 +2,7 @@
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   font-family: Poppins;
 }
 
@@ -69,15 +69,10 @@ select {
   left: -122px;
   top: -60px;
   border-radius: 50%;
-  background: linear-gradient(
-    145.44deg,
-    #e8edf0 10.54%,
-    rgba(232, 237, 240, 0) 85.04%
-  );
+  background: linear-gradient(145.44deg, #e8edf0 10.54%, rgba(232, 237, 240, 0) 85.04%);
 }
 
-.comments-container .comments-container__title,
-.comments-container .card__client-name {
+.comments-container .comments-container__title, .comments-container .card__client-name {
   font-style: normal;
   font-weight: bold;
 }
@@ -115,37 +110,36 @@ select {
   margin: 0 auto;
   display: grid;
   -ms-grid-columns: 1fr 2fr 1fr;
-  grid-template-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
 }
 
 @media (max-width: 600px) and (min-width: 481px) {
   .comments-container__cards {
     -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
   .comments-container__cards {
     -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) and (min-width: 599px) {
   .comments-container__cards {
-    grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .comments-container .card {
   border: 1px solid #e9ecf2;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-filter: drop-shadow(
-    0px 3.84083px 20.1644px rgba(157, 175, 181, 0.25)
-  );
-  filter: drop-shadow(0px 3.84083px 20.1644px rgba(157, 175, 181, 0.25));
+          box-sizing: border-box;
+  -webkit-filter: drop-shadow(0px 3.84083px 20.1644px rgba(157, 175, 181, 0.25));
+          filter: drop-shadow(0px 3.84083px 20.1644px rgba(157, 175, 181, 0.25));
   border-radius: 15.3633px;
   text-align: left;
   margin: 20px 10px;
@@ -230,11 +224,11 @@ select {
 .comments-container .wide-card .raul img {
   border-radius: 15.3633px;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
-.invisible {
+.notvisible {
   display: none;
 }
 

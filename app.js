@@ -2,7 +2,7 @@ const clients = document.getElementsByClassName("card__client-name");
 const cardsContainer = document.querySelector(".comments-container__cards");
 const textsCollection = document.getElementsByClassName("card__text");
 const jobsEls = document.getElementsByClassName(" card__job");
-const avatarsEls = document.getElementsByClassName(" card__ava");
+const avatarsEls = document.getElementsByClassName("card__ava");
 const loadButton = document.querySelector(".comments-container > button");
 const geoP = document.getElementById("adress-p");
 let shyrota;
@@ -15,8 +15,8 @@ const fillElems = (elems, dataFromApi, prop) => {
 };
 
 loadButton.onclick = () => {
-  cardsContainer.classList.toggle("invisible");
-  loadButton.classList.toggle("invisible");
+  cardsContainer.classList.toggle("notvisible");
+  loadButton.classList.toggle("notvisible");
 };
 Promise.all([
   fetch("https://random-data-api.com/api/users/random_user?size=7"),
@@ -38,7 +38,7 @@ Promise.all([
 
       jobsEls[i].innerText = `${data[0][i].employment.title}`;
 
-      //  avatarsEls[i].src = `${data[0][i].avatar}`;
+      //   avatarsEls[i].src = `${data[0][i].avatar}`;
     }
     fillElems(textsCollection, data[1], "very_long_sentence");
   })
