@@ -1,9 +1,9 @@
 const clients = document.getElementsByClassName("card__client-name");
-const cardsContainer = document.querySelector(".comments-container__cards");
+const cardsContainer = document.querySelector(".comments__cards");
 const textsCollection = document.getElementsByClassName("card__text");
 const jobsEls = document.getElementsByClassName(" card__job");
 const avatarsEls = document.getElementsByClassName("card__ava");
-const loadButton = document.querySelector(".comments-container > button");
+const loadButton = document.querySelector(".comments > button");
 const geoP = document.getElementById("adress-p");
 let shyrota;
 let dovgota;

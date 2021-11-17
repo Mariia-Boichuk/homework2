@@ -2,7 +2,6 @@
 $grey-color: #758091;
 $primary-white: #ffffff;
 $dark-color: #000;
-$mainc: "comments-container";
 *,
 *::before,
 *::after {
@@ -10,12 +9,7 @@ $mainc: "comments-container";
   font-family: Poppins;
 }
 
-ul,
-div,
-body,
-li,
-article,
-img {
+* {
   padding: 0;
   margin: 0;
 }
@@ -37,20 +31,7 @@ select {
   font: inherit;
 }
 
-.#{$mainc} > button {
-  padding: 0.5em 1em;
-  text-decoration: none;
-  color: #67c5ff;
-  border: double 4px #67c5ff;
-  border-radius: 3px;
-  transition: 0.4s;
-
-  &:hover {
-    background: $grey-color;
-  }
-}
-
-.#{$mainc} {
+.comments {
   position: relative;
   max-width: 1440px;
   min-height: 700px;
@@ -59,6 +40,19 @@ select {
   background: $primary-white;
   text-align: center;
   overflow: hidden;
+
+  &__load-button {
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: double 4px #67c5ff;
+    border-radius: 3px;
+    transition: 0.4s;
+
+    &:hover {
+      background: $grey-color;
+    }
+  }
   &::before {
     content: "";
     position: absolute;
