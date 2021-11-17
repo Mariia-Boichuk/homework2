@@ -14,6 +14,7 @@ ul,
 div,
 body,
 li,
+article,
 img {
   padding: 0;
   margin: 0;
@@ -36,11 +37,6 @@ select {
   font: inherit;
 }
 
-.wrapper {
-  text-align: right;
-  margin-bottom: 40px;
-}
-
 .#{$mainc} > button {
   padding: 0.5em 1em;
   text-decoration: none;
@@ -59,7 +55,7 @@ select {
   max-width: 1440px;
   min-height: 700px;
 
-  margin: 0 auto;
+  margin: 0 auto 40px;
   background: $primary-white;
   text-align: center;
   overflow: hidden;
@@ -164,7 +160,7 @@ select {
       margin-bottom: 0;
     }
 
-    &__minifoto {
+    &__photo_mini {
       margin: 20px 0 0 20px;
     }
   }
@@ -206,4 +202,5 @@ select {
   background-color: $primary-white;
   padding: 10px;
   margin: 40px 0 0;
+  text-align: right;
 }

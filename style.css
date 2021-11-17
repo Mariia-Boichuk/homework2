@@ -10,6 +10,7 @@ ul,
 div,
 body,
 li,
+article,
 img {
   padding: 0;
   margin: 0;
@@ -32,11 +33,6 @@ select {
   font: inherit;
 }
 
-.wrapper {
-  text-align: right;
-  margin-bottom: 40px;
-}
-
 .comments-container > button {
   padding: 0.5em 1em;
   text-decoration: none;
@@ -55,7 +51,7 @@ select {
   position: relative;
   max-width: 1440px;
   min-height: 700px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
   background: #ffffff;
   text-align: center;
   overflow: hidden;
@@ -184,7 +180,7 @@ select {
   margin-bottom: 0;
 }
 
-.comments-container .card__minifoto {
+.comments-container .card__photo_mini {
   margin: 20px 0 0 20px;
 }
 
@@ -240,5 +236,6 @@ select {
   background-color: #ffffff;
   padding: 10px;
   margin: 40px 0 0;
+  text-align: right;
 }
 /*# sourceMappingURL=style.css.map */
