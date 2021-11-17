@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./dest/style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,50 +18,34 @@
       <section class="comments-container">
         <h1 class="comments-container__title">Are my clients happy?</h1>
         <button class="comments-container__load-button">Load</button>
-        <ul class="comments-container__cards notvisible">
+        <ul class="comments-container__cards invisible">
           <div class="comments-container__column">
-            <li class="comments-container__card">
-              <img
-                src="./img/1rev.png"
-                alt=""
-                class="comments-container__ava"
-              />
-              <p class="comments-container__text">
+            <li class="card">
+              <img src="./img/1rev.png" alt="" class="card__ava" />
+              <p class="card__text">
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
                 Exercitation veniam consequat sunt nostrud amet.
               </p>
 
-              <p class="comments-container__client-name">Istiak Ahmed</p>
-              <p class="comments-container__job">CEO, Avito</p>
+              <p class="card__client-name">Istiak Ahmed</p>
+              <p class="card__job">CEO, Avito</p>
 
-              <img
-                class="comments-container__stars"
-                src="./img/star.svg"
-                alt="stars"
-              />
+              <img class="card__stars" src="./img/star.svg" alt="stars" />
             </li>
-            <li class="comments-container__card">
-              <div class="comments-container__miniinfo-wrapper">
-                <div class="comments-container__minifoto">
-                  <img
-                    src="./img/johnsari.png"
-                    alt=""
-                    class="comments-container__ava"
-                  />
+            <li class="card">
+              <div class="card__miniinfo-wrapper">
+                <div class="card__minifoto">
+                  <img src="./img/johnsari.png" alt="" class="card__ava" />
                 </div>
                 <div>
-                  <p class="comments-container__client-name">Jon Sari</p>
-                  <p class="comments-container__job">CEO, Avito</p>
+                  <p class="card__client-name">Jon Sari</p>
+                  <p class="card__job">CEO, Avito</p>
 
-                  <img
-                    class="comments-container__stars"
-                    src="./img/star.svg"
-                    alt="stars"
-                  />
+                  <img class="card__stars" src="./img/star.svg" alt="stars" />
                 </div>
               </div>
-              <p class="comments-container__text">
+              <p class="card__text">
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
                 Exercitation veniam
@@ -69,78 +53,54 @@
             </li>
           </div>
           <div class="comments-container__column">
-            <li class="comments-container__card wide-card">
+            <li class="card wide-card">
               <div class="raul">
-                <img
-                  src="./img/rahul.png"
-                  alt=""
-                  class="comments-container__ava"
-                />
+                <img src="./img/rahul.png" alt="" class="card__ava" />
               </div>
               <div>
-                <p class="comments-container__text">
+                <p class="card__text">
                   Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                   amet sint. Velit officia consequat duis enim velit mollit.
                   Exercitation veniam consequat sunt nostrud amet.
                 </p>
 
-                <p class="comments-container__client-name">Rahul Deb</p>
-                <p class="comments-container__job">CEO, Avito</p>
-                <img
-                  class="comments-container__stars"
-                  src="./img/star.svg"
-                  alt="stars"
-                />
+                <p class="card__client-name">Rahul Deb</p>
+                <p class="card__job">CEO, Avito</p>
+                <img class="card__stars" src="./img/star.svg" alt="stars" />
               </div>
             </li>
 
-            <li class="comments-container__card">
-              <div class="comments-container__miniinfo-wrapper">
-                <div class="comments-container__minifoto">
-                  <img
-                    src="./img/4rev.png"
-                    alt=""
-                    class="comments-container__ava"
-                  />
+            <li class="card">
+              <div class="card__miniinfo-wrapper">
+                <div class="card__minifoto">
+                  <img src="./img/4rev.png" alt="" class="card__ava" />
                 </div>
                 <div>
-                  <p class="comments-container__client-name">Ahmed Saimoon</p>
-                  <p class="comments-container__job">CEO, Avito</p>
-                  <img
-                    class="comments-container__stars"
-                    src="./img/star.svg"
-                    alt="stars"
-                  />
+                  <p class="card__client-name">Ahmed Saimoon</p>
+                  <p class="card__job">CEO, Avito</p>
+                  <img class="card__stars" src="./img/star.svg" alt="stars" />
                 </div>
               </div>
-              <p class="comments-container__text">
+              <p class="card__text">
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
                 Exercitation veniam consequat sunt nostrud amet.
               </p>
             </li>
 
-            <li class="comments-container__card">
-              <div class="comments-container__miniinfo-wrapper">
-                <div class="comments-container__minifoto">
-                  <img
-                    src="./img/5rev.png"
-                    alt=""
-                    class="comments-container__ava"
-                  />
+            <li class="card">
+              <div class="card__miniinfo-wrapper">
+                <div class="card__minifoto">
+                  <img src="./img/5rev.png" alt="" class="card__ava" />
                 </div>
                 <div>
-                  <p class="comments-container__client-name">Sakib Mo</p>
-                  <p class="comments-container__job">CEO, Avito</p>
+                  <p class="card__client-name">Sakib Mo</p>
+                  <p class="card__job">CEO, Avito</p>
 
-                  <img
-                    class="comments-container__stars"
-                    src="./img/star.svg"
-                    alt="stars"
-                  />
+                  <img class="card__stars" src="./img/star.svg" alt="stars" />
                 </div>
               </div>
-              <p class="comments-container__text">
+              <p class="card__text">
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
                 Exercitation veniam consequat sunt nostrud amet.
@@ -148,45 +108,33 @@
             </li>
           </div>
           <div class="comments-container__column">
-            <li class="comments-container__card">
-              <div class="comments-container__miniinfo-wrapper">
-                <div class="comments-container__minifoto">
-                  <img
-                    src="./img/6rev.png"
-                    alt=""
-                    class="comments-container__ava"
-                  />
+            <li class="card">
+              <div class="card__miniinfo-wrapper">
+                <div class="card__minifoto">
+                  <img src="./img/6rev.png" alt="" class="card__ava" />
                 </div>
                 <div>
-                  <p class="comments-container__client-name">Nazmul Karim</p>
-                  <p class="comments-container__job">CEO, Avito</p>
+                  <p class="card__client-name">Nazmul Karim</p>
+                  <p class="card__job">CEO, Avito</p>
 
-                  <img
-                    class="comments-container__stars"
-                    src="./img/star.svg"
-                    alt="stars"
-                  />
+                  <img class="card__stars" src="./img/star.svg" alt="stars" />
                 </div>
               </div>
-              <p class="comments-container__text">
+              <p class="card__text">
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
                 Exercitation veniam consequat sunt
               </p>
             </li>
 
-            <li class="comments-container__card">
-              <div class="comments-container__miniinfo-wrapper">
-                <div class="comments-container__minifoto">
-                  <img
-                    src="./img/7rev.png"
-                    alt=""
-                    class="comments-container__ava"
-                  />
+            <li class="card">
+              <div class="card__miniinfo-wrapper">
+                <div class="card__minifoto">
+                  <img src="./img/7rev.png" alt="" class="card__ava" />
                 </div>
                 <div>
-                  <p class="comments-container__client-name">Amir Khan</p>
-                  <p class="comments-container__job">CEO, Avito</p>
+                  <p class="card__client-name">Amir Khan</p>
+                  <p class="card__job">CEO, Avito</p>
 
                   <img
                     class="comments-container__stars"
@@ -195,7 +143,7 @@
                   />
                 </div>
               </div>
-              <p class="comments-container__text">
+              <p class="card__text">
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
                 Exercitation veniam consequat sunt

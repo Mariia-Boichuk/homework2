@@ -77,7 +77,7 @@ select {
 }
 
 .comments-container .comments-container__title,
-.comments-container .comments-container__client-name {
+.comments-container .card__client-name {
   font-style: normal;
   font-weight: bold;
 }
@@ -134,12 +134,11 @@ select {
 
 @media (max-width: 768px) and (min-width: 599px) {
   .comments-container__cards {
-    -ms-grid-columns: (1fr);
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.comments-container__card {
+.comments-container .card {
   border: 1px solid #e9ecf2;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -152,7 +151,7 @@ select {
   margin: 20px 10px;
 }
 
-.comments-container__text {
+.comments-container .card__text {
   margin: 20px;
   font-style: normal;
   font-weight: normal;
@@ -162,36 +161,36 @@ select {
   text-align: left;
 }
 
-.comments-container__client-name {
+.comments-container .card__client-name {
   font-size: 13.5px;
   margin: 20px 20px 0;
 }
 
-.comments-container__job {
+.comments-container .card__job {
   margin: 0;
   margin-left: 20px;
   font-size: 14px;
 }
 
-.comments-container__stars {
+.comments-container .card__stars {
   margin: 5px 20px 20px;
 }
 
-.comments-container__column {
+.comments-container .card__column {
   margin-bottom: 0;
 }
 
-.comments-container__miniinfo-wrapper {
+.comments-container .card__miniinfo-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.comments-container__miniinfo-wrapper .comments-container__stars {
+.comments-container .card__miniinfo-wrapper .comments-container .card__stars {
   margin-bottom: 0;
 }
 
-.comments-container__minifoto {
+.comments-container .card__minifoto {
   margin: 20px 0 0 20px;
 }
 
@@ -235,7 +234,7 @@ select {
   align-self: center;
 }
 
-.notvisible {
+.invisible {
   display: none;
 }
 

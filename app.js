@@ -1,12 +1,8 @@
-const clients = document.getElementsByClassName(
-  "comments-container__client-name"
-);
+const clients = document.getElementsByClassName("card__client-name");
 const cardsContainer = document.querySelector(".comments-container__cards");
-const textsCollection = document.getElementsByClassName(
-  "comments-container__text"
-);
-const jobsEls = document.getElementsByClassName(" comments-container__job");
-const avatarsEls = document.getElementsByClassName(" comments-container__ava");
+const textsCollection = document.getElementsByClassName("card__text");
+const jobsEls = document.getElementsByClassName(" card__job");
+const avatarsEls = document.getElementsByClassName(" card__ava");
 const loadButton = document.querySelector(".comments-container > button");
 const geoP = document.getElementById("adress-p");
 let shyrota;
@@ -19,8 +15,8 @@ const fillElems = (elems, dataFromApi, prop) => {
 };
 
 loadButton.onclick = () => {
-  cardsContainer.classList.toggle("notvisible");
-  loadButton.classList.toggle("notvisible");
+  cardsContainer.classList.toggle("invisible");
+  loadButton.classList.toggle("invisible");
 };
 Promise.all([
   fetch("https://random-data-api.com/api/users/random_user?size=7"),

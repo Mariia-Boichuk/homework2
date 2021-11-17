@@ -48,10 +48,10 @@ select {
   border: double 4px #67c5ff;
   border-radius: 3px;
   transition: 0.4s;
-}
 
-.#{$mainc} > button:hover {
-  background: $grey-color;
+  &:hover {
+    background: $grey-color;
+  }
 }
 
 .#{$mainc} {
@@ -119,56 +119,55 @@ select {
     }
   }
 
-  &__card {
+  .card {
     border: 1px solid #e9ecf2;
     box-sizing: border-box;
     filter: drop-shadow(0px 3.84083px 20.1644px rgba(157, 175, 181, 0.25));
     border-radius: 15.3633px;
     text-align: left;
     margin: 20px 10px;
-  }
 
-  &__text {
-    margin: 20px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 150%;
-    color: $dark-color;
-    text-align: left;
-  }
+    &__text {
+      margin: 20px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 150%;
+      color: $dark-color;
+      text-align: left;
+    }
 
-  &__client-name {
-    @extend %fontm;
-    font-size: 13.5px;
-    margin: 20px 20px 0;
-  }
-  &__job {
-    margin: 0;
-    margin-left: 20px;
+    &__client-name {
+      @extend %fontm;
+      font-size: 13.5px;
+      margin: 20px 20px 0;
+    }
+    &__job {
+      margin: 0;
+      margin-left: 20px;
 
-    font-size: 14px;
-  }
-  &__stars {
-    margin: 5px 20px 20px;
-  }
-  &__column {
-    margin-bottom: 0;
-  }
-  //================mimi-phpoto
+      font-size: 14px;
+    }
+    &__stars {
+      margin: 5px 20px 20px;
+    }
+    &__column {
+      margin-bottom: 0;
+    }
+    //================mini-phpoto
 
-  &__miniinfo-wrapper {
-    display: flex;
-  }
+    &__miniinfo-wrapper {
+      display: flex;
+    }
 
-  &__miniinfo-wrapper &__stars {
-    margin-bottom: 0;
-  }
+    &__miniinfo-wrapper &__stars {
+      margin-bottom: 0;
+    }
 
-  &__minifoto {
-    margin: 20px 0 0 20px;
+    &__minifoto {
+      margin: 20px 0 0 20px;
+    }
   }
-
   //----wide-card
   .wide-card {
     display: flex;
@@ -195,7 +194,7 @@ select {
   }
 }
 
-.notvisible {
+.invisible {
   display: none;
 }
 
