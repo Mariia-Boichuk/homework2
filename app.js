@@ -2,11 +2,9 @@ const clients = document.getElementsByClassName("card__client-name");
 const cardsContainer = document.querySelector(".comments__cards");
 const textsCollection = document.getElementsByClassName("card__text");
 const jobsEls = document.getElementsByClassName(" card__job");
-const avatarsEls = document.getElementsByClassName("card__ava");
-const loadButton = document.querySelector(".comments > button");
-const geoP = document.getElementById("adress-p");
-let shyrota;
-let dovgota;
+const avatartarsEls = document.getElementsByClassName("card__avatar");
+const loadButton = document.getElementById("button");
+const geoPosition = document.querySelector(".address-p");
 
 const fillElems = (elems, dataFromApi, prop) => {
   for (let i = 0; i < 7; i++) {
@@ -38,7 +36,7 @@ Promise.all([
 
       jobsEls[i].innerText = `${data[0][i].employment.title}`;
 
-      //   avatarsEls[i].src = `${data[0][i].avatar}`;
+      //   avatartarsEls[i].src = `${data[0][i].avatartar}`;
     }
     fillElems(textsCollection, data[1], "very_long_sentence");
   })
@@ -53,26 +51,20 @@ const options = {
   timeout: 5000,
   maximumAge: 0,
 };
-navigator.geolocation.getCurrentPosition(success, error, options);
 
-function success(pos) {
-  var crd = pos.coords;
-  shyrota = crd.latitude;
-  dovgota = crd.longitude;
-  console.log(shyrota, dovgota);
-  fetch(
-    `https://nominatim.openstreetmap.org/reverse?format=xml&lat=${shyrota}&lon=${dovgota}&zoom=18&addressdetails=1&format=json`
-  )
-    .then((res) => {
-      console.log(res);
-      return res.json();
-    })
-    .then((res) => {
-      console.log(res);
-      geoP.textContent = res.display_name;
-    });
-}
+const handleSuccess = async (pos) => {
+  const { latitude, longitude } = pos.coords;
 
-function error(err) {
+  const res = await fetch(
+    `https://nominatim.openstreetmap.org/reverse?format=xml&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1&format=json`
+  );
+  const geoObject = await res.json();
+
+  geoPosition.textContent = geoObject.display_name;
+};
+
+const handleError = (err) => {
   console.warn(`ERROR(${err.code}): ${err.message}`);
-}
+};
+
+navigator.geolocation.getCurrentPosition(handleSuccess, handleError, options);

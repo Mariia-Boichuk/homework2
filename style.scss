@@ -91,8 +91,6 @@ select {
   }
 
   &__cards {
-    display: grid;
-
     max-width: 1140px;
     min-height: 670px;
     margin: 0 auto;
@@ -159,7 +157,7 @@ select {
     }
   }
   //----wide-card
-  .wide-card {
+  .card_wide {
     display: flex;
     @include media-medium {
       display: block;
@@ -188,7 +186,7 @@ select {
   display: none;
 }
 
-#adress-p {
+.address-p {
   position: fixed;
   width: 100%;
   bottom: 0;
