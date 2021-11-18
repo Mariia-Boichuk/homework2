@@ -6,12 +6,6 @@ const avatartarsEls = document.getElementsByClassName("card__avatar");
 const buttonConst = document.getElementById("button");
 const geoPosition = document.querySelector(".address-p");
 
-const fillElems = (elems, dataFromApi, prop) => {
-  for (let i = 0; i < 7; i++) {
-    elems[i].innerText = dataFromApi[i][prop];
-  }
-};
-
 const loadData = async () => {
   try {
     const userApi = "https://random-data-api.com/api/users/random_user?size=7";
@@ -25,10 +19,8 @@ const loadData = async () => {
       clients[i].innerText = `${data[0][i].first_name} ${data[0][i].last_name}`;
 
       jobsEls[i].innerText = `${data[0][i].employment.title}`;
-
-      //   avatartarsEls[i].src = `${data[0][i].avatartar}`;
+      textsCollection[i].innerText = data[1][i]["very_long_sentence"];
     }
-    fillElems(textsCollection, data[1], "very_long_sentence");
   } catch (error) {
     console.log("ero", error);
   }
@@ -39,33 +31,6 @@ buttonConst.onclick = async () => {
   buttonConst.classList.remove("invisible");
   loadData();
 };
-// Promise.all([
-//   fetch("https://random-data-api.com/api/users/random_user?size=7"),
-//   fetch(
-//     "https://random-data-api.com/api/lorem_ipsum/random_lorem_ipsum?size=7"
-//   ),
-// ])
-//   .then(function (responses) {
-//     return Promise.all(
-//       responses.map(function (response) {
-//         return response.json();
-//       })
-//     );
-//   })
-//   .then(function (data) {
-//     console.log(data[2]);
-//     for (let i = 0; i < 7; i++) {
-//       clients[i].innerText = `${data[0][i].first_name} ${data[0][i].last_name}`;
-
-//       jobsEls[i].innerText = `${data[0][i].employment.title}`;
-
-//       //   avatartarsEls[i].src = `${data[0][i].avatartar}`;
-//     }
-//     fillElems(textsCollection, data[1], "very_long_sentence");
-//   })
-//   .catch(function (error) {
-//     console.log(error);
-//   });
 
 //===========geo================
 

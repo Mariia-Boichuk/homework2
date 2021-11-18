@@ -1,16 +1,12 @@
 const gulp = require("gulp");
 const postcss = require("gulp-postcss");
-//const sass = require("gulp-sass");
-var sass = require("gulp-sass")(require("sass"));
-var autoprefixer = require("autoprefixer");
+const sass = require("gulp-sass")(require("sass"));
+const autoprefixer = require("autoprefixer");
 gulp.task("css", function () {
-  const processors = [
-    autoprefixer({ browsers: ["last 4 versions"], grid: true }),
-  ];
   return gulp
     .src("./*.scss")
     .pipe(sass().on("error", sass.logError))
-    .pipe(postcss(processors))
+    .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest("./dest"));
 });
 

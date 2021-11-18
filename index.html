@@ -13,15 +13,15 @@
     />
     <link rel="stylesheet" href="./dest/style.css" />
 
-    <title>Muliple-client-testimonial</title>
+    <title>Multiple-client-testimonial</title>
   </head>
   <body>
     <section class="comments">
       <h1 class="comments__title">Are my clients happy?</h1>
       <button class="comments__load-button" id="button">Load</button>
-      <ul class="comments__cards cards invisible">
-        <div class="comments__column">
-          <article class="card">
+      <div class="comments__cards cards invisible">
+        <div class="cards__column">
+          <article class="card cards__card">
             <img src="./img/1rev.png" alt="" class="card__avatar" />
             <p class="card__text">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
@@ -34,7 +34,7 @@
 
             <img class="card__stars" src="./img/star.svg" alt="stars" />
           </article>
-          <article class="card">
+          <article class="card cards__card">
             <div class="card__miniinfo-wrapper">
               <div class="card__photo_mini">
                 <img src="./img/johnsari.png" alt="" class="card__avatar" />
@@ -53,8 +53,8 @@
             </p>
           </article>
         </div>
-        <div class="comments__column">
-          <article class="card card_wide">
+        <div class="cards__column">
+          <article class="card card_wide cards__card">
             <div class="raul">
               <img src="./img/rahul.png" alt="" class="card__avatar" />
             </div>
@@ -71,7 +71,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card cards__card">
             <div class="card__miniinfo-wrapper">
               <div class="card__photo_mini">
                 <img src="./img/4rev.png" alt="" class="card__avatar" />
@@ -89,7 +89,7 @@
             </p>
           </article>
 
-          <article class="card">
+          <article class="card cards__card">
             <div class="card__miniinfo-wrapper">
               <div class="card__photo_mini">
                 <img src="./img/5rev.png" alt="" class="card__avatar" />
@@ -108,8 +108,8 @@
             </p>
           </article>
         </div>
-        <div class="comments__column">
-          <article class="card">
+        <div class="cards__column">
+          <article class="card cards__card">
             <div class="card__miniinfo-wrapper">
               <div class="card__photo_mini">
                 <img src="./img/6rev.png" alt="" class="card__avatar" />
@@ -128,7 +128,7 @@
             </p>
           </article>
 
-          <article class="card">
+          <article class="card cards__card">
             <div class="card__miniinfo-wrapper">
               <div class="card__photo_mini">
                 <img src="./img/7rev.png" alt="" class="card__avatar" />
@@ -137,7 +137,7 @@
                 <p class="card__client-name">Amir Khan</p>
                 <p class="card__job">CEO, Avito</p>
 
-                <img class="comments__stars" src="./img/star.svg" alt="stars" />
+                <img class="card__stars" src="./img/star.svg" alt="stars" />
               </div>
             </div>
             <p class="card__text">
@@ -147,7 +147,7 @@
             </p>
           </article>
         </div>
-      </ul>
+      </div>
     </section>
 
     <p class="address-p">no physical adress</p>
