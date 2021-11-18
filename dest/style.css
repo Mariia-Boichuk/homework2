@@ -28,11 +28,14 @@ select {
   font: inherit;
 }
 
+.wrapper {
+  margin-bottom: 50px;
+}
+
 .comments {
   position: relative;
   max-width: 1440px;
   min-height: 700px;
-  margin: 0 auto 40px;
   background: #ffffff;
   text-align: center;
   overflow: hidden;
