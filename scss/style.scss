@@ -1,5 +1,5 @@
-@import "mixins/mixin_formedia.scss";
-$grey-color: #072a5f;
+@import "scss/mixins/mixin_formedia.scss";
+$grey-color: #758090;
 $primary-white: #ffffff;
 $dark-color: #000;
 *,
@@ -93,35 +93,6 @@ select {
   &__cards {
     margin: 0 auto;
   }
-
-  //----wide-card
-  .card_wide {
-    display: flex;
-    @include media-medium {
-      display: block;
-      padding: 20px 0 0;
-    }
-    @include media-xs {
-      display: block;
-    }
-    .raul {
-      max-height: 255px;
-      min-width: 50%;
-      display: flex;
-      @include media-medium {
-        padding: 0px 20px;
-      }
-
-      img {
-        border-radius: 15.3633px;
-        align-self: center;
-      }
-    }
-  }
-}
-
-.notvisible {
-  display: none;
 }
 
 .address-p {
@@ -149,20 +120,44 @@ select {
   @include media-medium {
     grid-template-columns: 1fr 1fr 1fr;
   }
+  &__card {
+    margin: 20px 10px;
+  }
 }
 
 .card {
   border: 1px solid #e9ecf2;
-  box-sizing: border-box;
   filter: drop-shadow(0px 3.84083px 20.1644px rgba(157, 175, 181, 0.25));
   border-radius: 15.3633px;
   text-align: left;
-  margin: 20px 10px;
+
+  &_wide {
+    display: flex;
+    @include media-medium {
+      display: block;
+      padding: 20px 0 0;
+    }
+    @include media-xs {
+      display: block;
+    }
+  }
+
+  &__photo_big {
+    max-height: 255px;
+    min-width: 50%;
+    display: flex;
+    @include media-medium {
+      padding: 0px 20px;
+    }
+
+    img {
+      border-radius: 15.3633px;
+      align-self: center;
+    }
+  }
 
   &__text {
     margin: 20px;
-    font-style: normal;
-    font-weight: normal;
     font-size: 14px;
     line-height: 150%;
     color: $dark-color;
@@ -183,20 +178,20 @@ select {
   &__stars {
     margin: 5px 20px 20px;
   }
-  &__column {
-    margin-bottom: 0;
-  }
-  //================mini-phpoto
 
-  &__miniinfo-wrapper {
+  &__info_mini {
     display: flex;
   }
 
-  &__miniinfo-wrapper &__stars {
+  &__info_mini &__stars {
     margin-bottom: 0;
   }
 
   &__photo_mini {
     margin: 20px 0 0 20px;
   }
+}
+
+.invisible {
+  display: none;
 }
