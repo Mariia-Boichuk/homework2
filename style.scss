@@ -1,5 +1,5 @@
 @import "mixins/mixin_formedia.scss";
-$grey-color: #758091;
+$grey-color: #072a5f;
 $primary-white: #ffffff;
 $dark-color: #000;
 *,
@@ -103,7 +103,7 @@ select {
       grid-template-columns: 1fr;
     }
     @include media-medium {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr 1fr;
     }
   }
 

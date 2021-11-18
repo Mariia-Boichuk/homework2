@@ -3,7 +3,7 @@ const cardsContainer = document.querySelector(".comments__cards");
 const textsCollection = document.getElementsByClassName("card__text");
 const jobsEls = document.getElementsByClassName(" card__job");
 const avatartarsEls = document.getElementsByClassName("card__avatar");
-const loadButton = document.getElementById("button");
+const buttonConst = document.getElementById("button");
 const geoPosition = document.querySelector(".address-p");
 
 const fillElems = (elems, dataFromApi, prop) => {
@@ -12,25 +12,15 @@ const fillElems = (elems, dataFromApi, prop) => {
   }
 };
 
-loadButton.onclick = () => {
-  cardsContainer.classList.toggle("notvisible");
-  loadButton.classList.toggle("notvisible");
-};
-Promise.all([
-  fetch("https://random-data-api.com/api/users/random_user?size=7"),
-  fetch(
-    "https://random-data-api.com/api/lorem_ipsum/random_lorem_ipsum?size=7"
-  ),
-])
-  .then(function (responses) {
-    return Promise.all(
-      responses.map(function (response) {
-        return response.json();
-      })
-    );
-  })
-  .then(function (data) {
-    console.log(data[2]);
+const loadData = async () => {
+  try {
+    const userApi = "https://random-data-api.com/api/users/random_user?size=7";
+    const sentenceApi =
+      "https://random-data-api.com/api/lorem_ipsum/random_lorem_ipsum?size=7";
+
+    const res = await Promise.all([fetch(userApi), fetch(sentenceApi)]);
+    const data = await Promise.all(res.map((el) => el.json()));
+
     for (let i = 0; i < 7; i++) {
       clients[i].innerText = `${data[0][i].first_name} ${data[0][i].last_name}`;
 
@@ -39,10 +29,43 @@ Promise.all([
       //   avatartarsEls[i].src = `${data[0][i].avatartar}`;
     }
     fillElems(textsCollection, data[1], "very_long_sentence");
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+  } catch (error) {
+    console.log("ero", error);
+  }
+};
+
+buttonConst.onclick = async () => {
+  cardsContainer.classList.add("invisible");
+  buttonConst.classList.remove("invisible");
+  loadData();
+};
+// Promise.all([
+//   fetch("https://random-data-api.com/api/users/random_user?size=7"),
+//   fetch(
+//     "https://random-data-api.com/api/lorem_ipsum/random_lorem_ipsum?size=7"
+//   ),
+// ])
+//   .then(function (responses) {
+//     return Promise.all(
+//       responses.map(function (response) {
+//         return response.json();
+//       })
+//     );
+//   })
+//   .then(function (data) {
+//     console.log(data[2]);
+//     for (let i = 0; i < 7; i++) {
+//       clients[i].innerText = `${data[0][i].first_name} ${data[0][i].last_name}`;
+
+//       jobsEls[i].innerText = `${data[0][i].employment.title}`;
+
+//       //   avatartarsEls[i].src = `${data[0][i].avatartar}`;
+//     }
+//     fillElems(textsCollection, data[1], "very_long_sentence");
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
 
 //===========geo================
 

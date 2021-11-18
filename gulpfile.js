@@ -1,13 +1,19 @@
-var gulp = require("gulp");
-var postcss = require("gulp-postcss");
-
+const gulp = require("gulp");
+const postcss = require("gulp-postcss");
+//const sass = require("gulp-sass");
+var sass = require("gulp-sass")(require("sass"));
 var autoprefixer = require("autoprefixer");
 gulp.task("css", function () {
-  var processors = [
+  const processors = [
     autoprefixer({ browsers: ["last 4 versions"], grid: true }),
   ];
   return gulp
-    .src("./*.css")
+    .src("./*.scss")
+    .pipe(sass().on("error", sass.logError))
     .pipe(postcss(processors))
     .pipe(gulp.dest("./dest"));
+});
+
+gulp.task("watch", function () {
+  gulp.watch("./*.scss", gulp.parallel("css"));
 });
